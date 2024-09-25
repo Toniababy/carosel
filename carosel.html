@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<style>
+    .ent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20%;
+    }
+
+    #box {
+        width: 400px;
+        height: 400px;
+        border-radius: 40px;
+        transition: 1s all;
+        /* background-color: blue; */
+    }
+
+    .blue {
+        background-color: blue;
+    }
+
+    .yellow {
+        background-color: yellow;
+    }
+
+    .red {
+        background-color: red;
+    }
+
+    .black {
+        background-color: black;
+    }
+</style>
+
+<body>
+    <div class="ent">
+        <span class="material-symbols-outlined" onclick="backward()">
+            chevron_left
+        </span>
+        <div id="box" style="background:blue"></div>
+        <span class="material-symbols-outlined" onclick="forward()">
+            chevron_right
+        </span>
+    </div>
+
+</body>
+
+</html>
+<script>
+    let counter = 0;
+    let colorArr = ['blue', 'yellow', 'red', 'black']
+    function forward() {
+        if (counter >= colorArr.length - 1) {
+            return;
+        }
+        counter++;
+        box.style.background = colorArr[counter];
+    }
+
+    function backward() {
+        if (counter <= 0) {
+            return;
+        }
+        counter--;
+        box.style.backgroundColor = colorArr[counter];
+    }
+
+</script>
